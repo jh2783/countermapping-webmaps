@@ -399,7 +399,6 @@
 
 ///FLY///////////////////////////////////////////
 
-  });
 
         var description = '<h4> ' +Address+'<br>'+
                       'BBL: '+BBL+'<br>'+
@@ -409,6 +408,8 @@
                       'In 2100 1 in 500yr Floodplain?: '+P_2100_5 +'</p>'
 
         popup.setLngLat(coordinates[0][0]).setHTML(description).addTo(map);
+
+ });
 
       map.on('mouseleave', 'affHousing', function() {
       map.getCanvas().style.cursor = '';
