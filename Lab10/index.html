@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Storytelling Map</title>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+
+    <link href='style.css' rel='stylesheet' />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1>Mapbox Storytelling</h1>
+    <!-- Create a container for your storymap -->
+    <div id="your-map-container" style="width: 100%; height: 500px;"></div>
+
+    <script>
+        // Define your storymap configuration
+       var storymapConfig = {
+            style: 'mapbox://styles/mapbox/light-v11',
+            accessToken: 'pk.eyJ1IjoiamgyNzgzIiwiYSI6ImNsbjF0eTNlODAxeDQzNGwyMHlvZmRraDAifQ.SGj4IJiMd_rTm4oqEvJlTw',
+            showMarkers: true,
+            markerColor: '#3FB1CE',
+            theme: 'light',
+            use3dTerrain: false,
+            title: 'STORYTELLING MAP',
+            subtitle: 'A descriptive and interesting subtitle to draw in the reader',
+            byline: 'By a Digital Storyteller',
+            footer: 'Source: source citations, etc.',
+            chapters: [
+                {
+                    id: 'chapter-1',
+                    alignment: 'left',
+                    hidden: false,
+                    title: 'Chapter 01',
+                    image: './path/to/image/source.png',
+                    description: `
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+                        <a href="https://example.com">Learn More</a>`,
+                    location: {
+                        center: [-122.418398, 37.759483],
+                        zoom: 8.5,
+                        pitch: 60,
+                        bearing: 0
+                    },
+                    mapAnimation: 'flyTo',
+                    rotateAnimation: false,
+                    callback: '',
+                    onChapterEnter: [],
+                    onChapterExit: []
+                },
+
+                // {
+                //    id: 'chapter-1',
+                //    alignment: 'left',
+                //    hidden: false,
+                //    title: 'Chapter 01',
+                //    image: './path/to/image/source.png',
+                //    description: `
+                //        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+                //        <a href="https://example.com">Learn More</a>`,
+                    location: {
+                //        center: [-122.418398, 37.759483],
+                //        zoom: 8.5,
+                //        pitch: 60,
+                //        bearing: 0
+                //    },
+                //    mapAnimation: 'flyTo',
+                //    rotateAnimation: false,
+                //    callback: '',
+                //    onChapterEnter: [],
+                //    onChapterExit: []
+                //},
+                
+            ]
+        };
+
+
+
+        // Initialize your storymap
+        const storymap = new MapboxStorytelling.Storymap({
+            storymapConfig,
+            container: 'your-map-container'
+        });
+    </script>
+
+</body>
+
+</html>
