@@ -7,68 +7,86 @@ body {
         a, a:hover, a:visited {
             color: #0071bc;
         }
+
         #map {
             top:0;
             height: 100vh;
             width:100vw;
             position: fixed;
         }
+
+
         
-        @media (max-width: 500px) {
+        @media (max-width: 200px) {
             #mapInset {
                 display: none;
             }
         }
 
+.chapter-image {
+    max-width: 100vw; /* Set maximum width to 100% of its container */
+    height: auto; /* Let the height adjust proportionally */
+    /* Add any additional styles you need */
+}
 
    #header {
     margin: auto;
     width: 100%;
     position: relative;
     z-index: 0;
-    background-image: url("images/sandy1.png");
+    background-image: url("images/COVID_GRAYSCALE2.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
-    height: 180vh
+    height: 180vh;
+    overflow: hidden;
 
 }
 
-#header h1, #header h2, #header p, #footer{
+#header h1, #header h2, #header p{
     margin: 0;
-    padding: 2vh 2vw;
+    padding: 1.5vh 2vw;
     text-align: center;
 }
 
 
-        #header h1{
+    #header h1{
 
-    padding-top:30vh;
+    padding-top:22vh;
     margin: 0;
-    font-size: 7vh;
+    font-size: 7.25vh;
     text-align: center;
-    color: white
+    color: white;
+    font-weight: 1400;
+    font-family: DM Serif Text,regular;
+    letter-spacing: 0.2em;
 
 }
-
           #header h2{
  
             margin: 0;
+            font-size: 2.25vh;
             padding: 2vh 2vw;
             text-align: center;
             color: white;
-            padding-bottom:20vh;
+            padding-bottom:12vh;
+            font-weight: 200;
+            font-family: PT Serif,bold;
+            letter-spacing: 0.06em;
+            max-width: 400px;
+            margin-left:auto;
+            margin-right: auto;
 
           }
 
           #header h3{
  
-            font-size: 1.2 vh;
+            font-size: 1 vh;
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
             color: white;
-            padding-bottom:34vh;
+            padding-bottom:14vh;
             font-weight: 200;
             font-style: italic;
             max-width: 1000px;
@@ -76,28 +94,65 @@ body {
 
           }
 
-          #header p{
+          #blank {
+    margin: auto;
+    width: 80%;
+    position: relative;
+    z-index: 0;
+    height: 100vh;
+    opacity:0;
 
-            font-size: 1.vh;
-            text-align: justify;
-            margin-left: 24vw;
-            margin-right: 24vw;
-            color: black
+    overflow: hidden;
 
-        }
+}
 
+#header h4 {
+    font-size: 1vh;
+    text-align: justify;
+    margin: 0 24vw;
+    position: absolute;
+    color: black;
+    width: 35vw;
+    line-height: 3;
+    font-family: Lato, Regular;
 
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-            position: relative;
-            z-index: 5;
-        }
+}
+
+#header h5 {
+    font-size: 1.5vh;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    color: black;
+    width: 35vw;
+    line-height: 1;
+    font-family: Lato, Regular;
+    font-weight: 300;
+}
+
+    #header p {
+    font-size: 1.75vh;
+    text-align: justify;
+    margin: 0 24vw;
+    position: relative;
+    color: black;
+    top: 56.5vh; /* Adjust the vertical position */
+    width: 45vw;
+    line-height: 1.7;
+}
+
+#footer {
+    text-align: center;
+    line-height: 25px;
+    font-size: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    margin: 0;
+    padding: 5px 0;
+}
+
         #features {
             padding-top: 10vh;
             padding-bottom: 10vh;
@@ -155,8 +210,9 @@ body {
             }
         }
 
+    
  #interlude {
-    width: 100vw;
+    width: 80vw;
 }
 
 #interlude p{
@@ -164,11 +220,8 @@ body {
     text-align: justify;
     margin-left: 34vw;
     margin-right: 34vw;
-    background-color: : white;
     max-width: 800px;
     margin: 0 auto;
-    padding-top:3vh;
-    padding-bottom:3vh;
 }
 
 video {
@@ -178,20 +231,20 @@ video {
     position: relative;
     left: 20%;
     transform: translateX(-50%);
-    padding-bottom:3vh;
+    padding-bottom:.5vh;
 }
+
 
 .legend {
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 2px;
     bottom: 30px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font: 12px/20px 'Lato, Regular';
-    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font: 8px/17px 'Lato', sans-serif; /* Fixed font-family declaration */
+    padding: 8px;
     position: fixed;
     right: 10px;
-    z-index: 5;
-    /* visibility: hidden; */
+    z-index: 2;
 }
 
 .legend div span {
@@ -202,5 +255,5 @@ video {
 }
 
 .legend h4 {
-    margin: 0 0 10px;
+    margin: 0 0 8px;
 }

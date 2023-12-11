@@ -18,21 +18,30 @@ var alignments = {
 }
 
 function getLayerPaintType(layer) {
-    var layerType = map.getLayer(layer).type;
-    return layerTypes[layerType];
+    if (map.getLayer(layer)) {
+        var layerType = map.getLayer(layer).type;
+        return layerTypes[layerType];
+    } else {
+        console.error('Layer not found:', layer);
+        return [];
+    }
 }
 
 function setLayerOpacity(layer) {
-    var paintProps = getLayerPaintType(layer.layer);
-    paintProps.forEach(function(prop) {
-        var options = {};
-        if (layer.duration) {
-            var transitionProp = prop + "-transition";
-            options = { "duration": layer.duration };
-            map.setPaintProperty(layer.layer, transitionProp, options);
-        }
-        map.setPaintProperty(layer.layer, prop, layer.opacity, options);
-    });
+    if (map.getLayer(layer.layer)) {
+        var paintProps = getLayerPaintType(layer.layer);
+        paintProps.forEach(function(prop) {
+            var options = {};
+            if (layer.duration) {
+                var transitionProp = prop + "-transition";
+                options = { "duration": layer.duration };
+                map.setPaintProperty(layer.layer, transitionProp, options);
+            }
+            map.setPaintProperty(layer.layer, prop, layer.opacity, options);
+        });
+    } else {
+        console.error('Layer not found:', layer.layer);
+    }
 }
 
 var story = document.getElementById('story');
@@ -40,8 +49,6 @@ var features = document.createElement('div');
 features.setAttribute('id', 'features');
 
 var header = document.createElement('div');
-header.id = 'header';
-document.body.appendChild(header);
 
 if (config.title) {
     var titleText = document.createElement('h1');
@@ -85,24 +92,29 @@ if (header.innerText.length > 0) {
     story.appendChild(header);
 }
 
+var blankDiv = '<div id="blank"></div>';
+header.insertAdjacentHTML('afterend', blankDiv);
+
+
 config.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var chapter = document.createElement('div');
 
     if (record.title) {
-        var title = document.createElement('h3');
+        var title = document.createElement('h4');
         title.innerText = record.title;
         chapter.appendChild(title);
     }
 
     if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        chapter.appendChild(image);
-    }
+    var image = new Image();
+    image.src = record.image;
+    image.classList.add('chapter-image'); // Add the class to apply specific styles
+    chapter.appendChild(image);
+}
 
     if (record.description) {
-        var story = document.createElement('p');
+        var story = document.createElement('h5');
         story.innerHTML = record.description;
         chapter.appendChild(story);
     }
@@ -139,7 +151,7 @@ story.appendChild(features);
 var footer = document.createElement('div');
 
 if (config.footer) {
-    var footerText = document.createElement('p');
+    var footerText = document.createElement('h4');
     footerText.innerHTML = config.footer;
     footer.appendChild(footerText);
 }
@@ -177,7 +189,7 @@ var map = new mapboxgl.Map({
 if (config.inset) {
  var insetMap = new mapboxgl.Map({
     container: 'mapInset', // container id
-    style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
+    style: 'mapbox://styles/jh2783/clq02ttl0012q01qmc2827h15', //hosted style id
     center: config.chapters[0].location.center,
     // Hardcode above center value if you want insetMap to be static.
     zoom: 3, // starting zoom
@@ -256,7 +268,7 @@ map.on("load", function() {
             chapter.onChapterEnter.forEach(setLayerOpacity);
         }
         if (chapter.callback) {
-            window[chapter.callback]();
+            chapter.callback();
         }
         if (chapter.rotateAnimation) {
             map.once('moveend', () => {
@@ -269,8 +281,6 @@ map.on("load", function() {
             });
         }
     })
-
-
     .onStepExit(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.remove('active');
@@ -278,7 +288,10 @@ map.on("load", function() {
             chapter.onChapterExit.forEach(setLayerOpacity);
         }
     });
-})
+    
+});
+
+
 //Helper functions for insetmap
 function getInsetBounds() {
             let bounds = map.getBounds();
@@ -364,4 +377,3 @@ function updateInsetLayer(bounds) {
 
 // setup resize event
 window.addEventListener('resize', scroller.resize);
-
