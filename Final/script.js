@@ -119,6 +119,14 @@ config.chapters.forEach((record, idx) => {
         chapter.appendChild(story);
     }
 
+if (record.image2) {
+        var image2 = new Image();
+        image2.src = record.image2;
+        chapter.appendChild(image2);
+    }
+
+
+
     if (record.video) {
         var videoDiv = document.createElement('div');
         videoDiv.setAttribute('class', 'videoContainer');
@@ -353,7 +361,7 @@ function addInsetLayer(bounds) {
         'layout': {},
         'paint': {
             'fill-color': '#fff', // blue color fill
-            'fill-opacity': 0.2
+            'fill-opacity': 0.5
         }
     });
     // // Add a black outline around the polygon.

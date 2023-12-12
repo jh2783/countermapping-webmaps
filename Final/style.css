@@ -94,19 +94,8 @@ body {
 
           }
 
-          #blank {
-    margin: auto;
-    width: 80%;
-    position: relative;
-    z-index: 0;
-    height: 100vh;
-    opacity:0;
 
-    overflow: hidden;
-
-}
-
-#header h4 {
+# h4 {
     font-size: 1vh;
     text-align: justify;
     margin: 0 24vw;
@@ -114,20 +103,18 @@ body {
     color: black;
     width: 35vw;
     line-height: 3;
-    font-family: Lato, Regular;
-
+    font-weight: normal!important;
 }
 
-#header h5 {
+# h5 {
     font-size: 1.5vh;
     text-align: center;
     margin: 0;
     position: absolute;
     color: black;
     width: 35vw;
-    line-height: 1;
-    font-family: Lato, Regular;
-    font-weight: 300;
+    line-height: .8;
+    font-weight: normal!important;
 }
 
     #header p {
@@ -187,10 +174,10 @@ body {
         .step {
             padding-bottom: 50vh;
             /* margin-bottom: 10vh; */
-            opacity: 0.25;
+            opacity: 0.7;
         }
         .step.active {
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .step div {
@@ -210,7 +197,14 @@ body {
             }
         }
 
-    
+.no-box {
+    background: transparent !important; /* Make the background transparent */
+    box-shadow: none !important; /* Remove any box shadow if applied */
+    border: none !important; /* Remove any border if applied */
+    padding: 0 !important; /* Remove any padding if applied */
+}    
+
+
  #interlude {
     width: 80vw;
 }
@@ -255,5 +249,5 @@ video {
 }
 
 .legend h4 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 }
