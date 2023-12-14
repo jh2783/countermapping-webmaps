@@ -50,15 +50,19 @@ map.on('load',function(){
 
 
         map.addLayer({
-                'id':'therapeuticlayer',
-                'type':'circle',
-                'source':'therapeutic',
-                'source-layer':'COVID-19_Public_Therapeutic_L-332zz9',
-                'paint': {
-                    'circle-radius': 2,
-                    'circle-color': '#ff7f00'
-                }
-            });
+    'id': 'therapeuticlayer',
+    'type': 'circle',
+    'source': 'therapeutic',
+    'source-layer': 'COVID-19_Public_Therapeutic_L-332zz9',
+    'paint': {
+        'circle-radius': [
+            'interpolate', ['linear'], ['zoom'],
+            5, 1.5,
+            10, 10
+        ],
+        'circle-color': '#ff7f00'
+    }
+});
 
         map.addLayer({
             'id': 'NA_poplayer',
@@ -90,12 +94,12 @@ map.on('load',function(){
                 'paint':{
                     'fill-color': ['step',
                                     ['to-number', ['get', 'int p_']],
-                                    '#ffffcc',
-                                    0.2, '#ffffcc',
-                                    0.4, '#c2e699', 
-                                    0.6, '#78c679',
-                                    0.8, '#31a354',
-                                    1, '#006837', 
+                                    ['rgba', 255,255,204, 0.9],
+                                    0.2, '#c2e699',
+                                    0.4, '#78c679', 
+                                    0.6, '#31a354',
+                                    0.8, '#006837',
+                                    1, '#000000', 
                                 ],
                     'fill-opacity': 0.4,
                 }
@@ -109,12 +113,12 @@ map.on('load',function(){
                 'paint':{
                     'fill-color': ['step',
                                     ['to-number', ['get', 'pov_']],
-                                    ['rgba', 255, 255, 255, 0.6],
-                                    11.6, '#d0d1e6', 
-                                    20, '#a6bddb',
-                                    35, '#67a9cf',
-                                    50, '#1c9099',
-                                    100, '#016c59', 
+                                    '#f1f2f8',
+                                    11.5, '#a6bddb', 
+                                    20, '#67a9cf',
+                                    35, '#1c9099',
+                                    50, '#016c59',
+                                    100, '#000000', 
                                 ],
                     'fill-opacity': 0.4,
                 }
@@ -165,7 +169,7 @@ map.on('load',function(){
                 'line-width': [
                     'interpolate', ['linear'], ['zoom'],
                     1, .1,
-                    10, 4
+                    10, 3
                     ],
             }
         });

@@ -2,6 +2,7 @@ body {
             margin:0;
             padding:0;
             font-family: Lato, Regular;
+            font-weight: 400 !important;
         }
 
         a, a:hover, a:visited {
@@ -43,7 +44,7 @@ body {
 
 }
 
-#header h1, #header h2, #header p{
+#header h1, #header h2,#header h4,#header h5, #header p{
     margin: 0;
     padding: 1.5vh 2vw;
     text-align: center;
@@ -70,7 +71,7 @@ body {
             text-align: center;
             color: white;
             padding-bottom:12vh;
-            font-weight: 200;
+            font-weight: 400;
             font-family: PT Serif,bold;
             letter-spacing: 0.06em;
             max-width: 400px;
@@ -81,13 +82,13 @@ body {
 
           #header h3{
  
-            font-size: 1 vh;
+            font-size: 8px;
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
             color: white;
             padding-bottom:14vh;
-            font-weight: 200;
+            font-weight: 300;
             font-style: italic;
             max-width: 1000px;
             margin: 0 auto;
@@ -95,7 +96,7 @@ body {
           }
 
 
-# h4 {
+#header h4 {
     font-size: 1vh;
     text-align: justify;
     margin: 0 24vw;
@@ -103,19 +104,18 @@ body {
     color: black;
     width: 35vw;
     line-height: 3;
-    font-weight: normal!important;
+    margin-left:auto;
+    margin-right: auto;
+    font-weight: 400;
+
 }
 
-# h5 {
-    font-size: 1.5vh;
-    text-align: center;
-    margin: 0;
-    position: absolute;
-    color: black;
-    width: 35vw;
-    line-height: .8;
-    font-weight: normal!important;
+h5 {
+    font-size: .83em; /* Adjust the font size */
+    font-weight: 400 !important; /* Set font weight to 100 and use !important */
+    /* Add other styles as needed */
 }
+
 
     #header p {
     font-size: 1.75vh;
@@ -138,6 +138,7 @@ body {
     background-color: transparent;
     margin: 0;
     padding: 5px 0;
+    font-weight: 400;
 }
 
         #features {
@@ -206,7 +207,7 @@ body {
 
 
  #interlude {
-    width: 80vw;
+    width: 89vw;
 }
 
 #interlude p{

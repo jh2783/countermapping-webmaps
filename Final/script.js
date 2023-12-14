@@ -118,14 +118,16 @@ config.chapters.forEach((record, idx) => {
         story.innerHTML = record.description;
         chapter.appendChild(story);
     }
-
-if (record.image2) {
+        if (record.image2) {
         var image2 = new Image();
         image2.src = record.image2;
         chapter.appendChild(image2);
     }
-
-
+        if (record.description2) {
+        var story = document.createElement('h5');
+        story.innerHTML = record.description;
+        chapter.appendChild(story);
+    }
 
     if (record.video) {
         var videoDiv = document.createElement('div');
