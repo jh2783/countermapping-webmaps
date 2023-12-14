@@ -320,7 +320,7 @@ bearing: 25.82
             hidden: false,
             title: '2. SOCIAL FACTOR: digital divide',
             image: 'https://github.com/jh2783/countermapping-webmaps/blob/main/Final/images/At-Home-Covid19-Tests.jpg?raw=true',
-            description: 'COVID-19 and Telehealth: <br> The utilization of telehealth and telemedicine in the U.S. surged by 13,000% during the pandemic (Bouabida, et al.), driven by the imperative need for physical distancing, stay-at-home directives, and the shortage of hospital capacities. However, the distribution of self-testing kits and medical treatments heavily relies on internet connectivity, sidelining households lacking access to the crucial resource. Researchers underscore that internet access has emerged as a pivotal "social determinant of health" in contemporary times, (Michaels) highlighting its profound impact on healthcare amid the pandemic.<br><br> Native Americans’ Low Broadband Usage: <br>In 2019, the American Indian Policy Institute (AIPI) found that only 18 percent of tribal lands do not have access to Broadband Internet, however, the actual usage of high-speed Broadband on the map, which is based on 2020 data Microsoft provided, turned out way lower than the availability. Internet connectivity in these areas frequently proves unstable and financially inaccessible, offering only minimal speeds or, in some cases, no connection at all. Moreover, many residents lack the necessary devices to access this connectivity. A member of the Navajo Nation testified "We had a carload of six people coming out here to be tested with possible exposure, but none of them had phones."(CBS Interactive)',
+            description: 'COVID-19, Telehealth, and Connectivity: <br> The utilization of telehealth and telemedicine in the U.S. surged by 13,000% during the pandemic (Bouabida, et al.), driven by the imperative need for physical distancing, stay-at-home directives, and the shortage of hospital capacities. However, the distribution of self-testing kits and medical treatments heavily relies on internet connectivity, sidelining households lacking access to the crucial resource. Researchers underscore that internet access has emerged as a pivotal "social determinant of health" in contemporary times, (Michaels) highlighting its profound impact on healthcare amid the pandemic. Additionally, the absence of connectivity during periods of isolation deepened feelings of depression across tribal communities. <br><br> Native Americans’ Low Broadband Usage: <br>In 2019, the American Indian Policy Institute (AIPI) found that only 18 percent of tribal lands do not have access to Broadband Internet, however, the actual usage of high-speed Broadband on the map, which is based on 2020 data Microsoft provided, turned out way lower than the availability. Internet connectivity in these areas frequently proves unstable and financially inaccessible, offering only minimal speeds or, in some cases, no connection at all. Moreover, many residents lack the necessary devices to access this connectivity. A member of the Navajo Nation testified "We had a carload of six people coming out here to be tested with possible exposure, but none of them had phones."(CBS Interactive)',
             image2:'',
             location: {
                 center: [-117.88655, 39.92230],
@@ -365,7 +365,7 @@ bearing: 25.82
             hidden: false,
             title: 'CASE STUDY: blackfeet indian reservation',
             image: 'https://github.com/jh2783/countermapping-webmaps/blob/main/Final/images/BF01_RGBB-1.jpg?raw=true',
-            description: 'description',
+            description: 'The Blackfeet reservation, situated at the northern end of Montana near Glacier National Park, faces limited urban development. In 2022, only 658 locations had broadband access, leaving 3,235 locations unserved. Within the tribe, households with internet access averaged 17 connected devices, overwhelming the network. (Chaney) This instability, coupled with reduced tourism income, led to financial, educational, and social challenges. To address this, the federal government invested $1 billion in pandemic relief to reconstruct internet infrastructure. Continuous attention and support from both the public and government are crucial until broadband is accessible to all community members.',
             image2: '',
             location: {
                 center: [-113.35653, 48.65846],
@@ -409,7 +409,7 @@ bearing: 15.45
             hidden: false,
             title: '3. PHYSICAL FACTOR: long travel distance to healthcare services',
             image: ' ',
-            description: 'description',
+            description: 'COVID-19 and Travel Distance: <br>Research found a tight relationship between the death rate due to the virus and the proximity to a community healthcare facility. Residents living farther from a facility had higher COVID-19 mortality across the U.S. This association is particularly pronounced in Black and Hispanic neighborhoods than the White neighborhoods, (Huang, et al) posing challenges in responding to urgent medical needs. <br><br>Therapeutic Centers in Reservations:<br>',
             location: {
                 center: [-117.88655, 39.92230],
                 zoom: 3.5,
@@ -477,7 +477,7 @@ bearing: 26.23
                 {layer: 'NA_poplayer', opacity: 0},
                 {layer: 'broadbandlayer', opacity: 0},
                 {layer: 'povertylayer', opacity: 0},
-                {layer: 'vaclayer', opacity: 0},
+                {layer: 'vaclayer', opacity: 1},
             ],
 
             onChapterExit: [
