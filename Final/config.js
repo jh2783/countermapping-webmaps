@@ -388,7 +388,7 @@ bearing: 15.45
                 {layer: 'camplayer', opacity: 1},
                 {layer: 'therapeuticlayer', opacity: 0},
                 {layer: 'NA_poplayer', opacity: 0},
-                {layer: 'broadbandlayer', opacity: .5},
+                {layer: 'broadbandlayer', opacity: .55},
                 {layer: 'povertylayer', opacity: 0},
                 {layer: 'vaclayer', opacity: 0},
             ],
